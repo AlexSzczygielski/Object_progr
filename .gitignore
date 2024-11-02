@@ -1,12 +1,11 @@
-# Ignore files without extensions (compiled)
-*[^.]*
+# Ignore all
+*
 
-# However, we want to allow directories
-!*/   
+# Unignore all with extensions
+!*.*
 
-# Ignore other compiled files
-*.out
-*.exe
+# Unignore all dirs
+!*/
 
-#ignore .vscode settings
+### Above combination will ignore all files without extension ###
 .vscode/
