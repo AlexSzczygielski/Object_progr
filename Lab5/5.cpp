@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <algorithm> // For std::transform
 using namespace std;
 
 //classes from before
@@ -15,6 +17,10 @@ class MyString : string{
     friend std::ostream& operator<<(std::ostream& out, MyString& str){
         out << static_cast <const string&> (str);
         return out;
+    }
+
+    MyString& to_upper(){
+        transform(str.begin(), str.end(), str.begin(), ::toupper);
     }
 };
 
