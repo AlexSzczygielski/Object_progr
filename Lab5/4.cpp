@@ -69,11 +69,17 @@ class Rectangle : public Figure{
     float getH() const {return m_h;}
 };
 
-class Square{
+class Square : public Rectangle{
     public:
+    //a
+    Square(float x = 1, float y = 1, const char* label = "Default label", float w = 5) :
+    Rectangle(x,y,label,w){
+        cout << "Square constructor called" << endl;
+    }
 };
 
 
 int main(){
+    Square sq;
     return 0;
 }
