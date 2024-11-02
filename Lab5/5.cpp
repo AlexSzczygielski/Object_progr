@@ -9,6 +9,7 @@ class MyString : string{
     MyString(const char* str = "default str") : string (str){
         cout << "MyString constructor called" << endl;
         //cout << *str << endl;
+        //print();
     }
     ~MyString(){
 
@@ -19,8 +20,15 @@ class MyString : string{
         return out;
     }
 
-    MyString& to_upper(){
-        transform(str.begin(), str.end(), str.begin(), ::toupper);
+    MyString& toUpper() {
+        for (char& c : *this) {  // Accessing the string directly using *this
+            c = toupper(c);
+        }
+        return *this;
+    }
+
+    void print() const {
+        cout << "The string is: " << *this << endl; // Using *this to convert to std::string
     }
 };
 
@@ -49,7 +57,7 @@ class Figure{
     //e
     void print(){
         cout << "I'm a Figure: (" << m_x << ',' << m_y
-        << "), my label is: " << m_label << endl;
+        << "), my label is: " << getLabel().toUpper() << endl;
     }
 };
 
@@ -77,7 +85,7 @@ class Rectangle : public Figure{
     //f
     void print(){
         cout << "I'm a Rectangle: (" << getX() << ',' << getY()
-        << "), my label is: " << getLabel() << endl;
+        << "), my label is: " << getLabel().toUpper() << endl;
     }
 };
 
@@ -96,8 +104,8 @@ class Square : public Rectangle{
 
     //g
     void print(){
-        cout << "I'm a Square: (" << getX() << ',' << getY()
-        << "), my label is: " << getLabel() << endl;
+        cout << "i'm a Square: (" << getX() << ',' << getY()
+        << "), my label is: " << getLabel().toUpper() << endl;
     }
 };
 
