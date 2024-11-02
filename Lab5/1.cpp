@@ -3,7 +3,7 @@ using namespace std;
 
 class MyString : string{
     public:
-    MyString(const char* str) : string (str){
+    MyString(const char* str = "default argument") : string (str){
         cout << "MyString constructor called" << endl;
         //cout << *str << endl;
     }
@@ -20,5 +20,7 @@ class MyString : string{
 int main(){
     MyString str1("test");
     cout << str1 << endl;
+    MyString def;
+    cout << "default: " << def << endl;
     return 0;
 }
