@@ -76,6 +76,11 @@ class Square : public Rectangle{
     Rectangle(x,y,label,w){
         cout << "Square constructor called" << endl;
     }
+
+    //d
+    ~Square(){
+        cout << "Square destructor called" << endl;
+    }
 };
 
 
