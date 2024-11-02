@@ -1,6 +1,9 @@
 # Ignore files without extensions (compiled)
 *[^.]*
 
+# However, we want to allow directories
+!*/   
+
 # Ignore other compiled files
 *.out
 *.exe
