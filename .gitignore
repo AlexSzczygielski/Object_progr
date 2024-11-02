@@ -4,3 +4,6 @@
 # Ignore other compiled files
 *.out
 *.exe
+
+#ignore .vscode settings
+.vscode/
