@@ -38,7 +38,7 @@ class Figure{
     //d
     float getX() const {return m_x;}
     float getY() const {return m_y;}
-    MyString getLabel() const {return m_label;}
+    MyString&  getLabel()  {return m_label;}
 
     //e
     void print(){
@@ -82,6 +82,11 @@ class Square : public Rectangle{
         cout << "Square destructor called" << endl;
     }
 
+    //f
+    void print(){
+        cout << "I'm a Rectangle: (" << getX() << ',' << getY()
+        << "), my label is: " << getLabel() << endl;
+    }
 };
 
 
