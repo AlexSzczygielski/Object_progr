@@ -81,6 +81,7 @@ class Square : public Rectangle{
     ~Square(){
         cout << "Square destructor called" << endl;
     }
+
 };
 
 
@@ -90,6 +91,11 @@ int main(){
     //b
     //Rectangle rec1;
     //c
-    Square sq1;
+    //Square sq1;
+
+    //d
+    Square sq(1.0,2.0,"square 1",10.0);
+    //e
+    sq.print();
     return 0;
 }
