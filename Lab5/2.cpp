@@ -27,10 +27,16 @@ class Figure{
     Figure(double x = 1, double y = 1, const char* str = "Default str") : m_x(x), m_y(y), m_label(str){
         cout << "Figure constructor called" << endl;
     }
+
+    //c
+    ~Figure(){
+        cout << "Figure destructor called" << endl;
+    }
+
 };
 
 int main(){
     Figure fig1(1,2,"test");
-    Figure fig_def;
+    //Figure fig_def;
     return 0;
 }
