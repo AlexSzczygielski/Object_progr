@@ -58,6 +58,15 @@ class Rectangle : public Figure{
     ) : Figure(x, y, label), m_w(w), m_h(h){
         cout << "Rectangle constructor called" << endl;
     }
+
+    //c
+    ~Rectangle(){
+        cout << "Rectangle destructor called" << endl;
+    }
+
+    //d
+    float getW() const {return m_w;}
+    float getH() const {return m_h;}
 };
 
 int main(){
