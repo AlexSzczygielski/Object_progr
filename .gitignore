@@ -9,3 +9,6 @@
 
 ### Above combination will ignore all files without extension ###
 .vscode/
+
+#Ignore Ds_Store
+.DS_Store 
