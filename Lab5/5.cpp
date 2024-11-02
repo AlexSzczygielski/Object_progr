@@ -67,7 +67,8 @@ class Rectangle : public Figure{
     //d
     float getW() const {return m_w;}
     float getH() const {return m_h;}
-    //g
+
+    //f
     void print(){
         cout << "I'm a Rectangle: (" << getX() << ',' << getY()
         << "), my label is: " << getLabel() << endl;
@@ -87,7 +88,11 @@ class Square : public Rectangle{
         cout << "Square destructor called" << endl;
     }
 
-
+    //g
+    void print(){
+        cout << "I'm a Square: (" << getX() << ',' << getY()
+        << "), my label is: " << getLabel() << endl;
+    }
 };
 
 
@@ -101,7 +106,7 @@ int main(){
 
     //d
     Square sq(1.0,2.0,"square 1",10.0);
-    //e and f
+    //e,f and g
     sq.print();
     return 0;
 }
