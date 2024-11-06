@@ -1,16 +1,29 @@
 #include<iostream>
 using namespace std;
 
-float quadratic(float a, float b, float c){
+void quadratic(float& a, float &b, float &c, float& x1, float& x2){
     float delta = (b*b) - (4*a*c);
     cout << "delta = " << delta << endl;
 
     if(delta >= 0){
-        float x1 = (sqrt(delta) - b)/(2*a);
-        float x2 = (sqrt(delta) + b)/(2*a);
+        x1 = (-b - sqrt(delta))/(2*a);
+        cout << "x1 = " << x1 << endl;
+        x2 = (-b + sqrt(delta))/(2*a);
+        cout << "x2 = " << x2 << endl;
+    }else{
+        cout << "no solutions" << endl;
     }
 }
 
 int main(){
+    float a = 1;
+    float b = 2;
+    float c = 2;
+    float x1,x2;
+    quadratic(a,b,c,x1,x2);
+    a = 1, b = 2, c = 1;
+    quadratic(a,b,c,x1,x2);
+    a = 1, b = 2, c = -2;
+    quadratic(a,b,c,x1,x2);
     return 0;
 }
