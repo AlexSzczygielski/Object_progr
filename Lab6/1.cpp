@@ -6,20 +6,30 @@ void quadratic(float& a, float &b, float &c, float& x1, float& x2){
     try{
         cout << "delta = " << delta << endl;
         if(delta<0){
-            throw runtime_error("Equation has no real solutions");
+            throw "Equation has no real solutions";
             cout << "This never prints" << endl;
         }
-        cout << "does this print \n";
+        //cout << "does this print \n";
         x1 = (-b - sqrt(delta))/(2*a);
         cout << "x1 = " << x1 << endl;
         x2 = (-b + sqrt(delta))/(2*a);
         cout << "x2 = " << x2 << endl;
     }
-    catch(const runtime_error& str){
+    catch(const char* ch){
+        cout << ch << endl;
     }
 }
 
 int main(){
+    float a,b,c,x1,x2;
+    cout << "a: ";
+    cin >> a;
+    cout << "b: ";
+    cin >> a;
+    cout << "c: ";
+    cin >> c;
+    quadratic(a,b,c,x1,x2);
+    /*
     float a = 1;
     float b = 2;
     float c = 2;
@@ -30,5 +40,6 @@ int main(){
     quadratic(a,b,c,x1,x2);
     a = 1, b = 2, c = -2;
     quadratic(a,b,c,x1,x2);
+    */
     return 0;
 }
