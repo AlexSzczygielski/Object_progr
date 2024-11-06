@@ -11,7 +11,7 @@ void quadratic(float& a, float &b, float &c, float& x1, float& x2){
         x2 = (-b + sqrt(delta))/(2*a);
         cout << "x2 = " << x2 << endl;
     }else{
-        cout << "no solutions" << endl;
+        cout << "Equation has no real solutions" << endl;
     }
 }
 
