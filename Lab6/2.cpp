@@ -19,6 +19,13 @@ void tryStoi(const string& str){
     catch(std::invalid_argument& exception){
         cerr << "No integer here: " << exception.what() << endl;
     }
+    //g
+    catch(std::exception& exception){
+        cerr << "exception from standard lib: " << exception.what() << endl;
+    }
+    catch(...){
+        cerr << "unknown exception: " << endl;
+    }
 }
 
 int main(){
