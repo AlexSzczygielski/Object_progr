@@ -15,7 +15,7 @@ class InvalidValue{
     public:
     InvalidValue(const char* error = "Invalid value") : m_error_msg(error){}
     const char* what(){
-        std::cout << "invalid value exception: ";
+        std::cout << "invalid (negative) value exception: ";
         return m_error_msg;
     }
 };
@@ -30,13 +30,20 @@ class StaticArray{
             m_arr[i] = i;
         }
     }
+    //a
     int at(int index){
         if(index<0 || index>15) throw InvalidIndex();
         return m_arr[index];
     }
-    
+    //b
+    void set_item(int index, int value){
+        if(index<0 || index>15) throw InvalidIndex();
+        if(value<0) throw InvalidValue();
+        m_arr[index] = value;
+    }
 };
 
 int main(){
+    StaticArray arr;
     return 0;
 }
