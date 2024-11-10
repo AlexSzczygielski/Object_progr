@@ -4,9 +4,14 @@
 #include<exception>
 using namespace std;
 
+void print(const int& n){
+    cout << "n: " << n << endl;
+}
+
 void tryStoi(const string& str){
     try{
         int n = std::stoi(str);
+        cout << "OK" << endl;
     }
     catch(std::out_of_range& exception){
         cerr << "You ran out of integer range: " << exception.what() << endl;
@@ -22,7 +27,7 @@ int main(){
     //cin >> str;
     //b
     int n = std::stoi(str);
-    cout << n << endl;
+    print(n);
     //c
     stringstream s;
     s << std::hex << n;
@@ -33,5 +38,9 @@ int main(){
         tryStoi(str); //exception out of range
         string str2 = "noIntegerHere";
         tryStoi(str2); //exception invalid argument
+    //f
+    cout << "type values that will make stoi throw an exception, e.g no integer inside string: ";
+    cin >> str;
+    tryStoi(str);
     return 0;
 }
