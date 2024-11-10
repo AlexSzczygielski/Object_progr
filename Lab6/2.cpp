@@ -20,9 +20,24 @@ int main(){
     try{
         str = "2147483648(MaxInt + 1)Bakczysaraj";
         n = std::stoi(str); //exception out of range
+        string str2 = "noIntegerHere"; //exception invalid argument
+        int n2 = std::stoi(str2);
     }
     catch(std::out_of_range& exception){
         cerr << "You ran out of integer range: " << exception.what() << endl;
+    }
+    catch(std::invalid_argument& exception){
+        cerr << "No integer here: " << exception.what() << endl;
+    }
+    try{
+        string str2 = "noIntegerHere"; //exception invalid argument
+        int n2 = std::stoi(str2);
+    }
+    catch(std::out_of_range& exception){
+        cerr << "You ran out of integer range: " << exception.what() << endl;
+    }
+    catch(std::invalid_argument& exception){
+        cerr << "No integer here: " << exception.what() << endl;
     }
     return 0;
 }
