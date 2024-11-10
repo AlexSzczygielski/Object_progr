@@ -5,7 +5,6 @@ class InvalidIndex{
     public:
     InvalidIndex(const char* error = "Invalid index") : m_error_msg(error){}
     const char* what(){
-        std::cout << "invalid index exception: ";
         return m_error_msg;
     }
 };
@@ -15,7 +14,7 @@ class InvalidValue{
     public:
     InvalidValue(const char* error = "Invalid value") : m_error_msg(error){}
     const char* what(){
-        std::cout << "invalid (negative) value exception: ";
+        std::cout << "invalid value exception: ";
         return m_error_msg;
     }
 };
@@ -26,7 +25,6 @@ class StaticArray{
     public:
     StaticArray(){
         for(int i = 0; i<16; i++){
-            std::cout << i << std::endl;
             m_arr[i] = i;
         }
     }
@@ -38,12 +36,32 @@ class StaticArray{
     //b
     void set_item(int index, int value){
         if(index<0 || index>15) throw InvalidIndex();
-        if(value<0) throw InvalidValue();
+        if(value<0) throw InvalidValue("Negative value");
         m_arr[index] = value;
+        std::cout << "m_arr[" << index << "]: " << value << std::endl;
     }
 };
 
 int main(){
     StaticArray arr;
+    //index above
+    try{
+        int n = arr.at(16);
+    }
+    catch(InvalidIndex& exception){
+        std::cerr << exception.what() << std::endl;
+    }
+    catch(...){std::cout << "unknown exception" << std::endl;};
+    //invalid value
+    try{
+        arr.set_item(15,-5);
+    }
+    catch(InvalidValue& exception){
+        std::cerr << exception.what() << std::endl;
+    }
+    catch(InvalidIndex& exception){
+        std::cerr << exception.what() << std::endl;
+    }
+    catch(...){std::cout << "unknown exception" << std::endl;}
     return 0;
 }
