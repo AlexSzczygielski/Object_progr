@@ -20,13 +20,13 @@ int main(){
         obj.open("copied.txt");
         char c;
         while(obj.get(c)){
-            std::cout << c << std::endl;
+            std::cout << c << " ";
         }
         obj.clear();
         obj.close();
     }
     catch(const std::ifstream::failure& e){
-        std::cerr << "exception: " << e.what() << std::endl;
+        std::cerr << std::endl << "exception: " << e.what() << std::endl;
     }
     return 0;
 }
