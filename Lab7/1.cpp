@@ -1,6 +1,12 @@
 #include<iostream>
 #include<vector>
+#include<algorithm>
 
+void print(std::vector<std::string> a){
+    for(int i = 0; i<a.size(); i++){
+        std::cout << a.at(i) << std::endl;
+    }
+}
 int main(){
     //a
     std::vector<std::string> shopping_list;
@@ -29,5 +35,22 @@ int main(){
         }
         //std::cout << shopping_list.at(i) << std::endl;
     }
+
+    //f
+    for(int i =0; i<shopping_list.size(); i++){
+        if(shopping_list.at(i) == "chocolate"){
+            shopping_list.erase(shopping_list.begin() + i);
+            std::cout << "chocolate erased" << std::endl;
+            break;
+        }
+        //std::cout << shopping_list.at(i) << std::endl;
+    }
+
+    //g
+    std::cout << "\n\n before sort: " << std::endl;
+    print(shopping_list);
+    std::sort(shopping_list.begin(),shopping_list.end());
+    std::cout << "\n after sort: " << std::endl;
+    print(shopping_list);
     return 0;
 }
