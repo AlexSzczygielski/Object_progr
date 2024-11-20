@@ -52,5 +52,9 @@ int main(){
     std::sort(shopping_list.begin(),shopping_list.end());
     std::cout << "\n after sort: " << std::endl;
     print(shopping_list);
+
+    //e
+    std::cout << "shopping list after all tasks: " << std::endl;
+    print(shopping_list);
     return 0;
 }
