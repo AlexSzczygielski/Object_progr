@@ -3,7 +3,7 @@
 #include<string>
 #include<algorithm>
 
-void print(std::vector<std::string> a){
+void print(std::vector<std::string>& a){
     for(int i = 0; i<a.size(); i++){
         std::cout << a.at(i) << std::endl;
     }
