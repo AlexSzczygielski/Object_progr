@@ -1,20 +1,19 @@
 #include<iostream>
 #include<string>
 #include<algorithm>
+#include<map>
 
 void letter_frequency(std::string& s){
-    std::sort(s.begin(),s.end());
-    //std::cout << s;
     char temp = s[0];
-    int count = 0;
+    int count;
+    std::map<char,int> frequency_map; //map - keys strings and values integers
+    
     for(int i = 0; i<=s.size();i++){
-        //std::cout << s[i] << std::endl;
-        if(s[i] == temp){ //here always at the 1st iteration
+        if(s[i]==temp){
             count++;
-        } else{
-            std::cout<< "frequency of '" << temp << "' : " << count << std::endl;
-            temp = s[i];
-            count = 1;
+        }else{
+            frequency_map[temp] = count;
+            std::cout << 
         }
     }
 }
